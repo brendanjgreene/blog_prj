@@ -11,12 +11,15 @@ class Post(models.Model):
     # author is linked to a registered
     # user in the 'auth_user' table.
     author = models.ForeignKey('auth.User')
+
     title = models.CharField(max_length=200)
     content = models.TextField()
     created_date = models.DateTimeField(default=timezone.now)
     published_date = models.DateTimeField(blank=True, null=True)
     views = models.IntegerField(default=0) #number of times post is viewed
     tag = models.CharField(max_length=30, blank=True, null=True)
+
+    image = models.ImageField(upload_to="images", blank=True, null=True)
 
     def publish(self):
         self.published_date = timezone.now()
