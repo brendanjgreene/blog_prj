@@ -7,4 +7,5 @@ urlpatterns = [
     url(r'^blog/(?P<id>\d+)/$', views.post_detail),
     url(r'^blog/top/$', views.top_lists),
     url(r'^post/new/$', views.new_post, name='new_post'),
+    url(r'^blog/(?P<id>\d+)/edit$', views.edit_post),
 ]
