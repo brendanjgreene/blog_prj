@@ -1,6 +1,12 @@
 from django.shortcuts import render, get_object_or_404
 from django.utils import timezone
 from .models import Post
+from .forms import BlogPostForm
+
+
+def new_post(request):
+    form = BlogPostForm()
+    return render(request, 'blogpostform.html', {'form': form})
 
 
 def get_base(request):
